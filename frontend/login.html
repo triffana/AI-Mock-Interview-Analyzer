@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Login</title>
+    <link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box">
+
+        <h1>Login</h1>
+
+        <input type="email"
+id="email"
+placeholder="Enter Email">
+
+<input type="password"
+id="password"
+placeholder="Enter Password">
+
+        <button onclick="login()">
+            Login
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function login(){
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+let storedEmail =
+localStorage.getItem("email");
+
+let storedPassword =
+localStorage.getItem("password");
+
+if(email == "" || password == ""){
+
+alert("Fill all fields");
+
+return;
+
+}
+
+if(
+email == storedEmail &&
+password == storedPassword
+){
+
+window.location.href =
+"permission.html";
+
+}
+
+else{
+
+alert("Invalid Email or Password");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

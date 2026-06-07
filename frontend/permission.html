@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Permission
+    </title>
+
+    <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <div class="permission-box">
+
+        <h1>
+            AI Interview Analyzer
+        </h1>
+
+        <p>
+
+            Camera & microphone access
+            required for interview analysis
+
+        </p>
+
+        <video
+        id="video"
+        autoplay
+        playsinline
+        muted>
+        </video>
+
+        <button
+        onclick="startCamera()">
+
+            Allow Camera & Mic
+
+        </button>
+
+        <button
+        onclick="continuePage()">
+
+            Continue Interview
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+window.permissionGranted = false;
+
+async function startCamera(){
+
+    try{
+
+        const stream =
+
+        await navigator.mediaDevices
+        .getUserMedia({
+
+            video:true,
+            audio:true
+
+        });
+
+        const video =
+
+        document.getElementById("video");
+
+        video.srcObject = stream;
+
+        window.permissionGranted = true;
+
+        console.log(
+        "Camera & Mic Access Granted"
+        );
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+        window.permissionGranted = false;
+
+        alert(
+        "Permission Denied! Please Allow Camera & Microphone."
+        );
+
+    }
+
+}
+
+function continuePage(){
+
+    if(window.permissionGranted){
+
+        window.location.href =
+        "selection.html";
+
+    }
+
+    else{
+
+        alert(
+        "Please Allow Camera & Microphone Access First"
+        );
+    }
+}
+</script>
+</body>
+</html>

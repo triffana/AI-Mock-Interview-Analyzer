@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Select Round</title>
+
+<link rel="stylesheet"
+href="style.css">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="box">
+
+<h1>Select Interview</h1>
+
+<label class="label-text">
+    Level
+</label>
+
+<select id="level">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+
+</select>
+
+<label class="label-text">
+    Round
+</label>
+
+<select id="round">
+
+<option>Aptitude</option>
+<option>HR</option>
+<option>Technical</option>
+
+</select>
+
+<button onclick="startInterview()">
+
+Start Interview
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function startInterview(){
+
+let level =
+document.getElementById("level").value;
+
+let round =
+document.getElementById("round").value;
+
+localStorage.setItem(
+"level",
+level.toLowerCase()
+);
+
+localStorage.setItem(
+"round",
+round.toLowerCase()
+);
+
+window.location.href =
+"interview.html";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Interview Result</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="result-body">
+
+<div class="result-container">
+
+    <h1>Interview Analysis Result</h1>
+
+    <h2 id="overallConfidence">
+    Overall Confidence : 0%
+</h2>
+
+<div class="score-box">
+
+    <h3 id="eyeContact">
+        Eye Contact : 0%
+    </h3>
+
+    <h3 id="speechClarity">
+        Speech Clarity : 0%
+    </h3>
+
+    <h3 id="stressLevel">
+        Stress Level : -
+    </h3>
+
+    <h3 id="voiceConfidence">
+        Voice Confidence : 0%
+    </h3>
+
+</div>
+
+    <div class="feedback-box">
+    <h3>AI Feedback</h3>
+
+    <h4>Strengths</h4>
+
+    <p id="strengths"></p>
+
+    <h4>Areas for Improvement</h4>
+
+    <p id="improvements"></p>
+
+</div>
+    <button onclick="restartInterview()">
+        Start Again
+    </button>
+</div>
+<script>
+
+let confidence =
+localStorage.getItem("confidence") || 85;
+
+let eyeContact =
+localStorage.getItem("eye_contact") || 82;
+
+let speechClarity =
+localStorage.getItem("speech_clarity") || 88;
+
+let stressLevel =
+localStorage.getItem("stress_level") || "Low";
+
+let voiceConfidence =
+localStorage.getItem("voice_confidence") || 84;
+
+document.getElementById(
+"overallConfidence"
+).innerHTML =
+"Overall Confidence : " +
+confidence + "%";
+
+document.getElementById(
+"eyeContact"
+).innerHTML =
+"Eye Contact : " +
+eyeContact + "%";
+
+document.getElementById(
+"speechClarity"
+).innerHTML =
+"Speech Clarity : " +
+speechClarity + "%";
+
+document.getElementById(
+"stressLevel"
+).innerHTML =
+"Stress Level : " +
+stressLevel;
+
+document.getElementById(
+"voiceConfidence"
+).innerHTML =
+"Voice Confidence : " +
+voiceConfidence + "%";
+
+document.getElementById(
+"strengths"
+).innerHTML =
+
+"✔ Good eye contact <br>" +
+"✔ Clear communication <br>" +
+"✔ Confident voice";
+
+document.getElementById(
+"improvements"
+).innerHTML =
+
+"✔ Reduce hesitation <br>" +
+"✔ Improve speaking pace <br>" +
+"✔ Maintain consistent posture";
+
+function restartInterview(){
+
+    window.location.href =
+    "selection.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
