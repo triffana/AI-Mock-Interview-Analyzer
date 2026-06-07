@@ -5,3 +5,5 @@ keras
 numpy
 librosa
 scikit-learn
+flask-cors
+gunicorn
