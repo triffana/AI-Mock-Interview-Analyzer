@@ -337,9 +337,7 @@ async function getResult(){
 
         const response =
 
-        await fetch(
-        "http://127.0.0.1:5000/predict"
-        );
+        await fetch("https://ai-mock-interview-analyzer-1.onrender.com/predict")
 
         const data =
         await response.json();
